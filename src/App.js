@@ -1,9 +1,9 @@
 import './App.css';
-import Header from './Header';
+import Header from './partials/Header';
 import React from 'react';
-import Home from './Home';
+import Home from './pages/Home';
 import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Checkout from './Checkout';
+import Checkout from './pages/Checkout';
 
 
 function App() {
