@@ -23,8 +23,8 @@ function Header() {
             type="text" />
             <SearchIcon className="headerSearchIcon"/>
         </div>
-
-        <div className='headerNav'>
+        <Link to="/login">
+          <div className='headerNav'>
             <div className = "headerOption">
               <span className='headerOptionLineOne'>
                 Hello Guest
@@ -32,7 +32,9 @@ function Header() {
               <span className='headerOptionLineTwo'>
                 Sign In
               </span>
-            </div>
+              </div>
+          </div>
+        </Link>
 
             <div className = "headerOption">
               <span className='headerOptionLineOne'>
@@ -59,8 +61,7 @@ function Header() {
               headerBasketCount">{basket.length}</span>
             </div>
             </Link>
-        </div>
-    </div>
+      </div>
   )
 }
 
