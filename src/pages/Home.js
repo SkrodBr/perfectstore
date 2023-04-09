@@ -1,6 +1,8 @@
 import React from 'react'
 import './Home.css'
 import Product from '../components/Product'
+import { Col, Row } from 'react-bootstrap'
+import { productsData } from '../components/ProductData'
 
 function Home() {
   return (
@@ -9,10 +11,20 @@ function Home() {
             <img 
                 className="homeImage" 
                 src="https://www.mitchellandbrown.co.uk/wp-content/uploads/2022/03/Prime-Video.jpg"
-                alt="" 
+                alt=""
             />
+            
+            <Row xs={1} md={3} className="homeRow">
+                {productsData.map((product, idx) => (
+                    <Col align="center" key={idx}>
+                        <Product product={product} />
+                        {/* <ProductCard product={product}/> */}
+                    </Col>
+                ))}
+            </Row>
 
-            <div className='homeRow'>
+
+            {/* <div className='homeRow'>
                 <Product 
                 id="323222"
                 title="The lean startup" 
@@ -64,7 +76,7 @@ function Home() {
                 image="https://i1.sndcdn.com/artworks-000223134666-iwx1j2-t500x500.jpg"
                 rating={5}
                 />
-            </div>
+            </div> */}
 
         </div>
     </div>

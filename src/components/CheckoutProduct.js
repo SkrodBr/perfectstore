@@ -1,8 +1,10 @@
 import React from 'react'
 import './CheckoutProduct.css'
 import { useStateValue } from './StateProvider'
+import { getProductData } from './ProductData'
 
-function CheckoutProduct({id, image, title, price, rating}) {
+function CheckoutProduct({id}) {
+
     const [{basket}, dispatch] =useStateValue()
     const removeFromBasket = () => {
         dispatch({
@@ -10,19 +12,20 @@ function CheckoutProduct({id, image, title, price, rating}) {
             id: id,
         })
     }
+    const product = getProductData(id)
 
     return (
         <div className='checkoutProduct'>
-            <img className='checkoutProductImage' src={image} />
+            <img className='checkoutProductImage' src={product.image} />
 
             <div className='checkoutProductInfo'>
-                <p className='checkoutProductTitle'>{title}</p>
+                <p className='checkoutProductTitle'>{product.title}</p>
                 <p className='checkoutProductPrice'>
                     <small>€</small>
-                    <strong>{price}</strong>
+                    <strong>{product.price}</strong>
                 </p>
                 <div className='checkoutProductRating'>
-                    {Array(rating)
+                    {Array(product.rating)
                     .fill()
                     .map((_,i) => (
                         "⭐"
