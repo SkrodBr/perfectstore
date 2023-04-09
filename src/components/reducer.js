@@ -1,14 +1,18 @@
+import { getProductData } from "./ProductData";
+
 export const initialState = {
     basket: [],
 }
 
-//Selector
-export const getBasketTotal = (basket) =>(
-    basket?.reduce((amount, item) => item.price + amount, 0)
-)
+export function getBasketTotal(basket){
+    var amount = 0.00
+    basket.map(basketItem =>(
+        amount += getProductData(basketItem.id).price
+    ))
+    return amount
+}
 
 const reducer = (state, action) => {
-    // console.log(action)
     switch(action.type){
         case 'ADD_TO_BASKET':
             return {
@@ -35,7 +39,6 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 basket: newBasket
-                // ...state, basket:state.basket.filter(item => item.id !== action.id)
             }
         default:
             return state;

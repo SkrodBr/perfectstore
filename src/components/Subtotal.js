@@ -5,7 +5,7 @@ import { useStateValue } from './StateProvider';
 import { getBasketTotal } from './reducer';
 
 function Subtotal() {
-  const[{basket}, dispatch] = useStateValue();
+  const[{basket}] = useStateValue();
 
   return (
     <div className='subtotal'>
@@ -21,7 +21,7 @@ function Subtotal() {
             </>
         )}
         decimalScale={2}
-        value={getBasketTotal(basket)}//getBasketTotal(basket)}
+        value={getBasketTotal(basket)}
         displayType={"text"}
         thousandSeparator={true}
         prefix={"€"}

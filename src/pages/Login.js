@@ -11,10 +11,10 @@ function Login() {
 
     }
 
-    const register = e => {
-        e.preventDefault();
+    // const register = e => {
+    //     e.preventDefault();
 
-    }
+    // }
 
     return (
         <div className='login'>  
@@ -22,6 +22,7 @@ function Login() {
                 <img
                     className="loginLogo" 
                     src ='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/905px-Amazon_logo.svg.png' 
+                    alt=""
                 />
             </Link>
             <div className='loginContainer'>
