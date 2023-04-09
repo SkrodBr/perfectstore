@@ -8,8 +8,10 @@
     width: 90%;
     max-height: 400px;
     min-width: 100px;
-    background-color: white;
+    background-color: rgb(252, 252, 252);
     z-index: 1;
+    border-radius: 10px;
+    border: 1px solid rgb(189, 189, 189);
 }
 
 .product > img{
@@ -25,8 +27,8 @@
     margin-top: 5px;
 }
 
-.productRating{
-    display: flex;
+ .productRating{
+    margin-top: -12px;
 }
 
 .productButton{
